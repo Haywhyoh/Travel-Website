@@ -39,5 +39,20 @@ function scrollHeader(){
     //when the scroll is greater than 100vh
     if(this.scrollY >=100) header.classList.add('scroll-header'); else header.classList.remove('scroll-header')
 }
-window.addEventListener('scroll',scrollHeader)
+window.addEventListener('scroll', scrollHeader)
 
+/*===================SWIPE DISCOVER======================*/
+var swiper = new Swiper(".discover_container", {
+    effect: "coverflow",
+    grabCursor: true,
+    centeredSlides: true,
+    slidesPerView: "auto",
+    loop: true,
+    spaceBetween: 32,
+    coverflowEffect: {
+      rotate: 0,
+   
+    },
+ 
+    
+  });
