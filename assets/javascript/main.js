@@ -54,5 +54,35 @@ var swiper = new Swiper(".discover_container", {
    
     },
  
-    
+ 
   });
+
+  /*===================VIDEO======================*/
+const videoFile = document.getElementById('video-file'),
+        videoButton = document.getElementById('video-button'),
+        videoIcon = document.getElementById('video-icon')
+
+function playPause(){
+    if (videoFile.paused){
+        videoFile.play()
+        //change icon when video starts
+        videoIcon.classList.add('ri-pause-circle-line')
+        videoIcon.classList.remove('ri-play-circle-line')
+    }else{
+        //change icon when video pause
+        videoFile.pause()
+        videoIcon.classList.remove('ri-pause-circle-line')
+        videoIcon.classList.add('ri-play-circle-line')
+
+    }
+}
+
+videoButton.addEventListener('click',playPause)
+
+function videoEnd(){
+    //change icon when video finish
+    videoIcon.classList.remove('ri-pause-circle-line')
+        videoIcon.classList.add('ri-play-circle-line')
+}
+
+videoFile.addEventListener('ended',videoEnd)
